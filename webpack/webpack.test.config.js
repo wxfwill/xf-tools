@@ -1,12 +1,14 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   mode: "production",
-  devServer: {
-    // contentBase: path.join(__dirname, "./example/index.html"),
-    hot: true,
-    open: true,
-    port: 6699,
+  output: {
+    path: path.resolve(__dirname, "../docs"),
+    filename: "will_xf_tools.js",
+    clean: true,
+    library: "xf-tools",
+    libraryTarget: "umd",
   },
   plugins: [
     new HtmlWebpackPlugin({

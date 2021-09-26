@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "/",
     "target": "ES5",
     "moduleResolution": "node",
     "jsx": "react",
@@ -16,6 +17,6 @@
     "declaration": false,
     "strictNullChecks": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "webpack/**/*"],
   "exclude": ["node_modules", "lib", "es", "dist", "**/__tests__", "**/__test__", "**/demo"]
 }
