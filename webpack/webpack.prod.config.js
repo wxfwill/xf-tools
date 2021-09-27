@@ -1,3 +1,4 @@
+/** @type {import('webpack').Configuration} */
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = {

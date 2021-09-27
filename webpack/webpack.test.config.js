@@ -1,3 +1,4 @@
+/** @type {import('webpack').Configuration} */
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 

@@ -1,3 +1,4 @@
+/** @type {import('webpack').Configuration} */
 const path = require("path");
 
 module.exports = {
