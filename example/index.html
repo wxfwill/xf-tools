@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>工具库测试</title>
   </head>
   <style>
     * {
@@ -102,11 +102,15 @@
           <p class="desc">id: dom的id</p>
         </div>
         <div class="list">
-          <span class="label">根据url打印 </span>
+          <span class="label">根据url打印</span>
           <span>urlPrint(url: string, isbase64?: boolean)</span>
           <p class="desc">url: 文件的url地址， isbase64：是否采用base64打印</p>
         </div>
       </li>
     </ul>
+    <script src="./will_xf_tools.dev.js"></script>
+    <script>
+      console.log(xfTools.urlParse("http://123.com?id=88"));
+    </script>
   </body>
 </html>

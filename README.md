@@ -11,15 +11,15 @@
 ## 使用
 
 ```
-import tools from 'xf-tools'
+import Tools from 'xf-tools'
 
- 默认从tools下引入默认方法
+ 默认从Tools下引入默认方法
 ```
 
 ## example
 
 ```js
-console.log(tools.toolDate.formatDate(new Date(1632643437144)), "yyyy-MM-dd");
+console.log(Tools.formatDate(new Date(1632643437144)), "yyyy-MM-dd");
 
 // 打印格式化后的时间
 ```

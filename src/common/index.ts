@@ -1,7 +1,7 @@
 // 获取url参数
 export const urlParse = (src: string) => {
   const url = decodeURIComponent(src) || null;
-  const obj = {};
+  const obj: any = {};
   const reg = /[?&][^?&]+=[^?&]+/g;
   const arr = url && url.match(reg);
   if (arr) {
