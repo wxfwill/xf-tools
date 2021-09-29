@@ -6,6 +6,7 @@ import alias from "@rollup/plugin-alias";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import filesize from "rollup-plugin-filesize";
+// import strip from "@rollup/plugin-strip";
 const path = require("path");
 const resolveDir = (dir) => path.join(__dirname, dir);
 
@@ -18,8 +19,12 @@ export default {
     name: "xfTools", // 包名称
     file: "dist/will_xf_tools.min.js", // 最终打包出来的文件路径和文件名
     format: "umd", // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
+    exports: "named", // 指定导出模式
   },
   plugins: [
+    // strip({ // 删除 console.log 暂时没有生效
+    //   functions: ["console.log", "alert"],
+    // }),
     // 打包插件
     babel({
       exclude: "node_modules/**", // 排除node_module下的所有文件
@@ -32,6 +37,6 @@ export default {
       entries: [{ find: "@", replacement: resolveDir("src") }],
     }),
     terser(), // 压缩js
-    filesize(),
+    filesize(), // 显示信息
   ],
 };
