@@ -9,6 +9,7 @@ module.exports = {
     clean: true,
     library: "xf-tools",
     libraryTarget: "umd",
+    globalObject: "this", // umd 设置this 在浏览器和node均可用
   },
   resolve: {
     alias: {
