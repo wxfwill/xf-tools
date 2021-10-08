@@ -3,7 +3,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.xfTools = {}));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["xf-tools"] = {}));
 })(this, (function (exports) { 'use strict';
 
     /*! *****************************************************************************
@@ -1173,10 +1173,10 @@
         downFileUrl: downFileUrl$1
     });
 
-    console.log("http://123456.com");
-    console.log("dev");
+    // console.log("http://123456.com");
+    // console.log("dev");
     var Tools = __assign(__assign(__assign(__assign({}, toolCommon), toolDate), toolPrint), toolDown);
-    console.log(Tools);
+    // console.log(Tools);
     // es 按需引入
     var urlParse = Tools.urlParse, formatDate = Tools.formatDate, downFileBlob = Tools.downFileBlob, downFileUrl = Tools.downFileUrl, htmlPrint = Tools.htmlPrint, urlPrint = Tools.urlPrint;
 

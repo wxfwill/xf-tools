@@ -7,20 +7,41 @@ import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import filesize from "rollup-plugin-filesize";
 // import strip from "@rollup/plugin-strip";
+import { name, version, author } from "./package.json";
 const path = require("path");
 const resolveDir = (dir) => path.join(__dirname, dir);
 
 console.log("当前环境==" + process.env.NODE_ENV);
+const pkgName = "xf-tools";
+const banner =
+  "/*!\n" + ` * ${name} v${version}\n` + ` * (c) 2014-${new Date().getFullYear()} ${author}\n` + " * Released under the MIT License.\n" + " */";
 
 export default {
   input: "src/index.ts", // 打包入口
-  output: {
-    // 打包出口
-    name: "xfTools", // 包名称
-    file: "dist/will_xf_tools.min.js", // 最终打包出来的文件路径和文件名
-    format: "umd", // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
-    exports: "named", // 指定导出模式
-  },
+  output: [
+    {
+      // 打包出口
+      name: pkgName, // 包名称
+      file: `dist/${pkgName}.umd.min.js`, // 最终打包出来的文件路径和文件名
+      format: "umd", // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
+      exports: "named", // 指定导出模式
+      banner,
+    },
+    {
+      name: pkgName, // 包名称
+      file: `dist/${pkgName}.cjs.min.js`, // 最终打包出来的文件路径和文件名
+      format: "cjs", // commonjs
+      banner,
+      exports: "named", // 指定导出模式
+    },
+    {
+      name: pkgName, // 包名称
+      file: `dist/${pkgName}.esm.min.js`, // 最终打包出来的文件路径和文件名
+      format: "es", // esm
+      banner,
+      exports: "named", // 指定导出模式
+    },
+  ],
   plugins: [
     // strip({ // 删除 console.log 暂时没有生效
     //   functions: ["console.log", "alert"],
