@@ -1,13 +1,6 @@
-/*
- * @Author: will
- * @Date: 2021-10-08 16:25:25
- * @LastEditTime: 2021-11-02 11:06:20
- * @LastEditors: will
- * @Description:
- */
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript";
 import babel from "rollup-plugin-babel";
 import alias from "@rollup/plugin-alias";
 import postcss from "rollup-plugin-postcss";
@@ -33,7 +26,6 @@ export default {
       format: "umd", // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
       exports: "named", // 指定导出模式
       banner,
-      plugins: [terser()],
     },
     {
       name: pkgName, // 包名称
@@ -41,7 +33,6 @@ export default {
       format: "cjs", // commonjs
       banner,
       exports: "named", // 指定导出模式
-      plugins: [terser()],
     },
     {
       name: pkgName, // 包名称
@@ -49,7 +40,6 @@ export default {
       format: "es", // esm
       banner,
       exports: "named", // 指定导出模式
-      plugins: [terser()],
     },
   ],
   plugins: [
@@ -67,6 +57,7 @@ export default {
     alias({
       entries: [{ find: "@", replacement: resolveDir("src") }],
     }),
+    terser(), // 压缩js
     filesize(), // 显示信息
   ],
 };

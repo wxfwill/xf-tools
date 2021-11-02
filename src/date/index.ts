@@ -1,7 +1,18 @@
+/*
+ * @Author: will
+ * @Date: 2021-09-26 12:17:18
+ * @LastEditTime: 2021-10-20 14:07:56
+ * @LastEditors: will
+ * @Description:
+ */
 function padLeftZero(str: any) {
   return `00${str}`.substr(str.length);
 }
-/* 格式化时间戳
+/**
+ * @description: 格式化时间戳
+ * @param date {new Date()}
+ * @param fmt {yyyy-MM-DD hh:mm:ss}
+ * @return {*}
  */
 export const formatDate = (date: any, fmt: any) => {
   if (/(y+)/.test(fmt)) {

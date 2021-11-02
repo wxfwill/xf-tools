@@ -4,3 +4,4 @@ src
 .babelrc
 example
 rollup.config.js
+rollup.config.prod1.js
