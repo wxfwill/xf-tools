@@ -1,7 +1,7 @@
 <!--
  * @Author: will
  * @Date: 2021-09-26 14:22:49
- * @LastEditTime: 2021-11-02 12:34:35
+ * @LastEditTime: 2021-11-02 14:12:58
  * @LastEditors: will
  * @Description:
 -->
@@ -39,7 +39,7 @@ console.log(Tools.formatDate(new Date(1632643437144)), "yyyy-MM-dd");
 
 ## API
 
-<table border>
+<table>
 	<tr>
 	    <th>类型说明</th>
 	    <th>方法名</th>
