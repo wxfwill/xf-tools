@@ -1,9 +1,9 @@
 {
   "name": "xf-tools",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "will",
   "main": "dist/xf-tools.umd.min.js",
-  "module": "dist/xf-tools.esm.min.js",
+  "module": "dist/xf-tools.esm.js",
   "license": "MIT",
   "keywords": [
     "xf-tools",

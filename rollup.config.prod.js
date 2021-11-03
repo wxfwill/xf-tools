@@ -1,9 +1,9 @@
 /*
  * @Author: will
  * @Date: 2021-10-08 16:25:25
- * @LastEditTime: 2021-11-02 11:06:20
+ * @LastEditTime: 2021-11-03 10:18:11
  * @LastEditors: will
- * @Description:
+ * @Description: rollup build配置文件
  */
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
@@ -45,11 +45,10 @@ export default {
     },
     {
       name: pkgName, // 包名称
-      file: `dist/${pkgName}.esm.min.js`, // 最终打包出来的文件路径和文件名
+      file: `dist/${pkgName}.esm.js`, // 最终打包出来的文件路径和文件名
       format: "es", // esm
       banner,
       exports: "named", // 指定导出模式
-      plugins: [terser()],
     },
   ],
   plugins: [
